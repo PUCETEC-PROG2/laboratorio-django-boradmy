@@ -9,3 +9,12 @@ class Pokemon(models.Model):
 
     def __str__(self):
         return self.name
+    
+class Entrenador_Pokemon(models.Model):
+    name = models.CharField(max_length=50)
+    apellido = models.CharField(max_length=50)
+    level = models.IntegerField()
+    fechadenacimiento = models.DateField()
+
+    def __str__(self):
+        return self.name

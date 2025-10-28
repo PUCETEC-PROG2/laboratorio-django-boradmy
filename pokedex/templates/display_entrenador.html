@@ -9,22 +9,14 @@
             <div class="bg-primary text-white p-4 text-center">
                 <h1>Mi Pokedex</h1>
             </div>
-            <p class="p-2">Pokemons</p>
-            <ul class="list-group">
-                {% for pokemon in pokemons %}
-                <li class="list-group-item">
-                    <a href="{{ pokemon.id }}">{{ pokemon | capfirst }}</a>
-                </li>
-                {% endfor %}
-            </ul>
-            
-            <p class="p-2">Entrenador Pokemon</p>
-            <ul class="list-group">
-                {% for entrenador in entrenadores %}
-                <li class="list-group-item">
-                    <a href="{{ entrenador.id }}">{{ entrenador | capfirst }}</a>
-                </li>
-                {% endfor %}
+            <p>Has elegido al entrenador: <strong>{{ entrenador | capfirst }}</strong></p>
+            <h3>Detalles del Entrenador</h3>
+            <ul>
+                <li>ID: {{ entrenador.id }}</li>
+                <li>Nombre: {{ entrenador.name | capfirst }}</li>
+                <li>Apellido: {{ entrenador.apellido | capfirst }}</li>
+                <li>Nivel: {{ entrenador.level }}</li>
+                <li>Fecha de Nacimiento: {{ entrenador.fechadenacimiento }}</li>
             </ul>
         </div>
     </body>
