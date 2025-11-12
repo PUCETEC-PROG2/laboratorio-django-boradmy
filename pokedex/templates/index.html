@@ -2,7 +2,8 @@
 
 {% block content %}
 
-<p class="p-2">Pokemons</p>
+<h3>Lista de Pokemons</h3>
+<a href = "{% url 'pokedex:add_pokemon' %}" >Añadir Pokemon</a>
 
 <div class="row">
     {% for pokemon in pokemons %}
@@ -12,7 +13,17 @@
             <div class="card-body">
                 <h5 class="card-title">{{ pokemon.name }}</h5>
                 <p class="card-text">Tipo: {{ pokemon.type }}</p>
-                <a href="{{ pokemon.id }}" class="btn btn-primary">Ver más</a>
+                <a href="{{ pokemon.id }}" class="btn btn-primary">
+                    <i class="fa-solid fa-eye"></i>  Ver detalles
+                </a>
+
+                <a href="edit_pokemon/{{ pokemon.id }}" class="btn btn-primary">
+                    <i class="fa-solid fa-pen-to-square"></i>  Editar
+
+                </a>
+                <a href="delete_pokemon/{{ pokemon.id }}" class="btn btn-danger">
+                    <i class="fa-solid fa-trash"></i>  Eliminar
+                </a>
             </div>
         </div>
 
