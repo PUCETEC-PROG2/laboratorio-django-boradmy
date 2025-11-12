@@ -7,7 +7,5 @@ from .models import Entrenador_Pokemon
 class PokemonAdmin(admin.ModelAdmin):
     pass
 
-@admin.register(Entrenador_Pokemon)
-class EntrenadorPokemonAdmin(admin.ModelAdmin):
-    pass
+
     
