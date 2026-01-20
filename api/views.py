@@ -11,6 +11,8 @@ class PokemonViewSet(viewsets.ModelViewSet):
     authentication_classes = [OAuth2Authentication]
     required_scopes = ['write']
 
+    pagination_class = None 
+
     def get_permissions(self):
         if self.request.method in ['POST', 'PUT', 'PATCH', 'DELETE']:
             return [IsAuthenticated(), TokenHasScope()]
