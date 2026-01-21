@@ -23,6 +23,7 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
+    path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('', include('pokedex.urls')),
 ]
